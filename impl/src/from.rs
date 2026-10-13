@@ -234,7 +234,7 @@ impl Expansion<'_> {
                             .push(parse_quote! { #ty: derive_more::core::convert::From<#ident> });
                         generics
                             .params
-                            .push(syn::TypeParam::from(ident.clone()).into());
+                            .push(syn::GenericParam::Type(ident.clone().into()));
                     }
                     generics
                 };
